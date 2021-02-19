@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar cep</title>
+</head>
+<body>
+    <main>
+        <section class="banner-container">
+            <h1>Consulta CEP</h1>
+            <P>Entre um CEP para obter informação do local</P>
+            <div class="input-container">
+                <input type="number" name="cep" placeholder="Digite o CEP" data-cep="input">
+                <button type="button" class="btn" data-cep="btn">Pesquisar</button>
+            </div>
+        </section>
+        <section class="informations-container">
+            <h1>Endereço</h1>
+            <p>Logradouro:<span data-cep="logradouro"></span></p>
+            <p>Complemento:<span data-cep="complemento"></span></p>
+            <p>Bairro:<span data-cep="bairro"></span></p>
+            <p>Cidade:<span data-cep="cidade"></span></p>
+            <p>UF:<span data-cep="uf"></span></p>
+        </section>
+    </main>
+</body>
+</html>
