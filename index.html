@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultar cep</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <main>
+    <main class="main">
         <section class="banner-container">
             <h1>Consulta CEP</h1>
             <P>Entre um CEP para obter informação do local</P>
             <div class="input-container">
                 <input type="number" name="cep" placeholder="Digite o CEP" data-cep="input">
-                <button type="button" class="btn" data-cep="btn">Pesquisar</button>
+                <div>
+                    <button type="button" class="btn" data-cep="btn">Pesquisar</button>
+                <button type="button" class="btn-clean" data-cep="btn-clean">Limpar</button>
+                </div>
             </div>
         </section>
-        <section class="informations-container">
+        <section class="informations-container show">
             <h1>Endereço</h1>
             <p>Logradouro:<span data-cep="logradouro"></span></p>
             <p>Complemento:<span data-cep="complemento"></span></p>
@@ -25,5 +29,6 @@
             <p>UF:<span data-cep="uf"></span></p>
         </section>
     </main>
+    <script src="./script.js"></script>
 </body>
 </html>
