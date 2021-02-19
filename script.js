@@ -3,7 +3,8 @@ const btnClean = document.querySelector('[data-cep="btn-clean"]');
 const cepUser = document.querySelector('[data-cep="input"]');
 
 function cepConsult() {
-    const cep = fetch(`https://viacep.com.br/ws/${cepUser.value}/json/`);
+    if(cepUser.value.length === 8){
+        const cep = fetch(`https://viacep.com.br/ws/${cepUser.value}/json/`);
     cep.then(resolve => resolve.json())
     .then(cep => {
         document.querySelector('[data-cep="logradouro"]').innerText = cep.logradouro;
@@ -13,6 +14,10 @@ function cepConsult() {
         document.querySelector('[data-cep="uf"]').innerText = cep.uf;
         document.querySelector('.informations-container').classList.add('show');
     })
+    } else {
+        alert('Cep inválido, digite um cep valido contendo 8 digitos');
+    }
+    
 }
 
 function clearValues() {
