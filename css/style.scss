@@ -5,3 +5,93 @@
 }
 $gray: #e7e8ea;
 $gray-dark: #343a40;
+$white: #fff;
+
+@mixin color($value) {
+    @if $value == g {
+        color: $gray-dark;
+    } @else if $value == w {
+        color: $white;
+    }
+}
+html {
+    font-size: 10px;
+}
+.main {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.banner-container {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 5px;
+    background: $gray-dark;
+    h1 {
+        @include color(w);
+        font-size: 5rem;
+        margin-bottom: 5px;
+    }
+    p {
+        @include color(w);
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+}
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    input {
+        width: 70%;
+        padding: 10px;
+        border: none;
+        color: $gray-dark;
+    }
+    button {
+        width: 100px;
+        padding: 10px;
+        text-transform: uppercase;
+        color: $gray-dark;
+        background: $gray;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        &.btn-clean {
+            background: $white;
+        }
+    }
+    @media (max-width:760px) {
+        flex-direction: column;
+        input {
+            width: 100%;
+        }
+        button {
+            width: 150px;
+            margin-top: 20px;
+        }
+    }
+}
+.informations-container {
+    display: none;
+    background: $gray;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 30px 20px;
+    h1 {
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $gray-dark;
+    }
+    p {
+        color: $gray-dark;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0 15px 10px 0;
+        span {
+            color: $gray-dark;
+            font-size: 1.8rem;
+        }
+    }
+    &.show {
+        display: block;
+    }
+}
